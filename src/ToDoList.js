@@ -14,8 +14,8 @@ const ToDoList = () => {
       setNewTask("");
     }
   }
-  function deletetask(index) {
-    let index2 = tasks.filter((_, i) => i !== index);
+  function deletetask(items,index) {
+    let index2 = tasks.filter((item, i) => i !== index);
     setTask(index2);
   }
   function movetaskup(index) {
@@ -62,7 +62,7 @@ const ToDoList = () => {
             <>
               {" "}
                
-           {task.length === 0 ? ( <>
+           {tasks.length ==1 ? ( <>
            
             <li key={index}>
                 <span className="text">{task}</span>
@@ -96,32 +96,6 @@ const ToDoList = () => {
 
 
               </>) }
-
-
-
-
-
-
-
-
-            {/* //   <li key={index}>
-            //     <span className="text">{task}</span>
-            //   </li>
-            //   <button
-            //     className="delete-button"
-            //     onClick={() => deletetask(index)}
-            //   >
-            //     Delete
-            //   </button>
-            //   <button className="move-button" onClick={() => movetaskup(index)}>
-            //     MoveUp
-            //   </button>
-            //   <button
-            //     className="move-button"
-            //     onClick={() => movetaskdown(index)}
-            //   >
-            //     MoveDown
-            //   </button> */}
             </>
           );
         })}
