@@ -10,6 +10,7 @@ const ToDoList = () => {
   function addtask() {
     if (newTask.trim() !== "") {
       setTask([...tasks, newTask]);
+      console.log(tasks)
       setNewTask("");
     }
   }
@@ -45,7 +46,7 @@ const ToDoList = () => {
       {/* <h1 className="hello">To Do List</h1> */}
       <div style={{marginTop:"300px"}}>
         <input
-        style={{background:"black",color:"whitesmoke"}}
+        style={{background:"black",color:"white"}}
           type="text"
           placeholder="Enter a task to do"
           value={newTask}
@@ -60,6 +61,19 @@ const ToDoList = () => {
           return (
             <>
               {" "}
+               
+           {task.length === 0 ? ( <>
+           
+            <li key={index}>
+                <span className="text">{task}</span>
+              </li>
+              <button
+                className="delete-button"
+                onClick={() => deletetask(index)}
+              >
+                Delete
+              </button>
+             </>) : (<>
               <li key={index}>
                 <span className="text">{task}</span>
               </li>
@@ -78,6 +92,36 @@ const ToDoList = () => {
               >
                 MoveDown
               </button>
+
+
+
+              </>) }
+
+
+
+
+
+
+
+
+            {/* //   <li key={index}>
+            //     <span className="text">{task}</span>
+            //   </li>
+            //   <button
+            //     className="delete-button"
+            //     onClick={() => deletetask(index)}
+            //   >
+            //     Delete
+            //   </button>
+            //   <button className="move-button" onClick={() => movetaskup(index)}>
+            //     MoveUp
+            //   </button>
+            //   <button
+            //     className="move-button"
+            //     onClick={() => movetaskdown(index)}
+            //   >
+            //     MoveDown
+            //   </button> */}
             </>
           );
         })}
