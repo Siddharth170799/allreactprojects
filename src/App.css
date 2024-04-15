@@ -1,38 +1,77 @@
-.App {
+body{
+  /* background-color: hsl(0,0%,10%); */
+  background-image: url('http://thumbs.dreamstime.com/z/to-do-list-heading-background-template-business-presentation-background-business-slide-show-64705070.jpg');
+}
+.to-do-list{
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 100px;
+}
+h1{
+  font-size: 4rem;
+}
+button{
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.add-button{
+  background-color: hsl(125,47%,54%)
+}
+.add-button:hover{
+  background-color: hsl(125,47%,54%)
+}
+.delete-button{
+  background-color: hsl(10,90%,50%)
+}
+.delete-button:hover{
+  background-color: hsl(10,90%,40%)
+}
+.move-button{
+  background-color: hsl(207,90%,64%)
+}
+.move-button:hover{
+  background-color: hsl(207,90%,54%)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="text"]{
+font-size: 1.6rem;
+padding: 10px;
+border: 2px solid hsla(0,0%,80%,0.5);
+border-radius: 5px;
+color: hsla(0,0%,0%,0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ol{
+  padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li{
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: hsl(0,0%,97%);
+  margin-bottom: 10px;
+  border: 3px solid hsla(0,0%,85%,0.75);
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+text{
+  flex:1;
+}
+.delete-button, .move-button{
+  padding:8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
+.hello{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
