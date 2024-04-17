@@ -1,7 +1,8 @@
 body{
-  /* background-color: hsl(0,0%,10%); */
-  background-image: url('http://thumbs.dreamstime.com/z/to-do-list-heading-background-template-business-presentation-background-business-slide-show-64705070.jpg');
-}
+  background-color: hsl(0,0%,10%); 
+  background-image: url("https://i0.wp.com/techbeasts.com/wp-content/uploads/2016/01/nature-wallpapers-hd.jpg");
+
+ } 
 .to-do-list{
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;

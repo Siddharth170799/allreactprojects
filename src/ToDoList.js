@@ -8,14 +8,14 @@ const ToDoList = () => {
     setNewTask(event.target.value);
   }
   function addtask() {
-    if (newTask.trim() !== "") {
+    if (newTask !== "") {
       setTask([...tasks, newTask]);
-      console.log(tasks)
-      setNewTask("");
+     setNewTask("");
+     console.log(tasks)
     }
   }
-  function deletetask(items,index) {
-    let index2 = tasks.filter((item, i) => i !== index);
+  function deletetask(index) {
+    let index2 = tasks.filter((_, i) => i!== index);
     setTask(index2);
   }
   function movetaskup(index) {
@@ -61,9 +61,9 @@ const ToDoList = () => {
           return (
             <>
               {" "}
-               
+
            {tasks.length ==1 ? ( <>
-           
+
             <li key={index}>
                 <span className="text">{task}</span>
               </li>
@@ -93,8 +93,6 @@ const ToDoList = () => {
                 MoveDown
               </button>
 
-
-
               </>) }
             </>
           );
@@ -105,3 +103,4 @@ const ToDoList = () => {
 };
 
 export default ToDoList;
+

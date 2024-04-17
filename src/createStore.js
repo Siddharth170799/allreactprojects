@@ -1,16 +1,16 @@
-import React from "react";
-import Slice from "./createSlice";
-import { configureStore } from '@reduxjs/toolkit'
-import slice from "./createSlice";
+// import React from "react";
+// import Slice from "./createSlice";
+// import { configureStore } from '@reduxjs/toolkit'
+// import slice from "./createSlice";
 
-const Store=configureStore({
+// const Store=configureStore({
 
-reducer :{
-Sid : slice
-}
+// reducer :{
+// Sid : slice
+// }
 
-}
+// }
 
 
-)
-export default Store
+// )
+// export default Store
