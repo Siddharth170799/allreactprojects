@@ -46,7 +46,7 @@
 
 // export default Student
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -54,6 +54,8 @@ import Modal from '@mui/material/Modal';
 // import { addUser } from './Slice';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { sendAnswers } from './Slice3';
+import { useNavigate } from 'react-router-dom';
 // import ModalChild from './ModalChild';
 // import ModalChild3 from './ModalChild3';
 
@@ -70,11 +72,13 @@ const style = {
 };
 
 const Teacher = () => {
-    debugger;
+    
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const dispatch=useDispatch()
-  const details=useSelector((state)=>state.Sid.userQuestion[0])
+  const navigate=useNavigate()
+  const [state,setState]=useState("")
+  const details=useSelector((state)=>state.Sid.userQuestion)
   
   const [question,setQuestion]=useState(details)
   console.log(question)
@@ -82,7 +86,18 @@ const Teacher = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
+   const send=(e)=>{
+    // e.preventDefault()
+    // let obj={
+    //     answer:input
+    // }
+    // dispatch(sendAnswers(obj))
+    localStorage.setItem("key2",input)
+   }
+   useEffect(()=>{
+   const fetch1= localStorage.getItem("key1")
+   setState(fetch1)
+   },[])
   return (
     <>
       <div>
@@ -98,17 +113,24 @@ const Teacher = () => {
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
                 <div>Question</div>
+
+
                 {/* <div>{question.map((item,index)=>{
                     return(
-                        <div key={index}>{item.text}</div>
+                        <div key={index}>{item.question}</div>
                     )
                 })}</div> */}
-                <div>{question}</div>
+                {/* <div>{question}</div> */}
+                {/* <div>{JSON.stringify(question)}</div> */}
+               <div>{state}</div>
                 <div>Answer The Question</div>
               <input type='text' placeholder='Enter' onChange={(e)=>{
                 setInput(e.target.value)
               }}/>
-              <button style={{backgroundColor:"green"}} onClick={()=>{}}>Submit</button>
+              <button style={{backgroundColor:"green"}} onClick={send}>Submit</button>
+              <div onClick={()=>{
+                navigate("/student")
+              }}>Click to student</div>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             

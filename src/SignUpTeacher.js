@@ -13,7 +13,7 @@ const SignUpTeacher = () => {
   return (
     <div>
          <div>
-      <div class="signup-container">
+      <div class="signup-container" style={{backgroundColor:"black",color:"white"}}>
     <h2>Sign Up</h2>
     <form>
       <div class="form-group">
@@ -41,13 +41,16 @@ const SignUpTeacher = () => {
                 email:email,
                 password:password
             }
-            dispatch(addUser(obj))
+            // dispatch(addUser(obj))
             e.preventDefault()
             navigate("/signinteacher")
+            localStorage.setItem("key3",JSON.stringify(obj))
         }}>Sign Up</button>
       </div>
     </form>
-    <p>Already have an account? <a href="#">Log In</a></p>
+    <p>Already have an account? <a href="#" onClick={()=>{
+        navigate("/signinteacher")
+    }}>Log In</a></p>
   </div>
     </div>
     </div>

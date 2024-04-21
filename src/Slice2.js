@@ -15,6 +15,7 @@ reducers:{
     sendQuestion:(state,action)=>{
         state.userQuestion.push(action.payload)
     }
+   
 }
 
 })

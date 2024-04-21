@@ -15,8 +15,10 @@ const get=details.find((item)=>item.email===input && item.password===input2)
 
 function verify(e){
     e.preventDefault()
-    if(get){
-        navigate("/student")
+    const main=localStorage.getItem("key3")
+    const main2=JSON.parse(main)
+    if(main2){
+        navigate("/teacher")
     }
     else{
         alert("Invalid Email or Password")

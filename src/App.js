@@ -25,6 +25,12 @@ import LoginStudent from './LoginStudent';
 import SignUpTeacher from './SignUpTeacher';
 import LoginTeacher from './LoginTeacher';
 import Teacher from './Teacher';
+import SignInSide from './newpage';
+import SignUps from './newpagesignup';
+import SignInSide2 from './teacherSignIn';
+import SignUps2 from './teacherSignup';
+import MediaCover from './video';
+// import SignUp from './SignUp';
 
 function App() {
   return (
@@ -55,14 +61,18 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<SignUp/>}/>
-      <Route path="/signupstudent" element={<SignUpStudent/>}/>
-      <Route path="/signinstudent" element={<LoginStudent/>}/>
+      <Route path="/signupstudent" element={<SignUps/>}/>
+      <Route path="/signinstudent" element={<SignInSide/>}/>
       <Route path="/student" element={<Student/>}/>
-      <Route path="/signupteacher" element={<SignUpTeacher/>}/>
-      <Route path="/signinteacher" element={<LoginTeacher/>}/>
+      <Route path="/signupteacher" element={<SignUps2/>}/>
+      <Route path="/signinteacher" element={<SignInSide2/>}/>
       <Route path="/teacher" element={<Teacher/>}/>
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> 
+      {/* /* <SignInSide/>
+      <SignUps/> */}
+      {/* <MediaCover/> */}
+      {/* <SignUp/> */}
 
     </>
   );

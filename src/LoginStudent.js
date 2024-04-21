@@ -7,21 +7,33 @@ const LoginStudent = () => {
     const [input2,setInput2]=useState("")
     const navigate=useNavigate()
 
-const details=useSelector((state)=>state.users)
-console.log(details)
+// const details=useSelector((state)=>state.users)
+// console.log(details)
 
-const get=details.find((item)=>item.email===input && item.password===input2)
+// const get=details.find((item)=>item.email===input && item.password===input2)
 
 
-function verify(e){
-    e.preventDefault()
-    if(get){
+// function verify(e){
+//     e.preventDefault()
+//     if(get){
+//         navigate("/student")
+//     }
+//     else{
+//         alert("Invalid Email or Password")
+//     }
+// }
+function verify(){
+    const getDetails=localStorage.getItem("key");
+    const getDetails2=JSON.parse(getDetails)
+    if(getDetails2.email===input && getDetails2.password===input2){
         navigate("/student")
+
     }
     else{
         alert("Invalid Email or Password")
     }
 }
+
 
   return (
     <div>

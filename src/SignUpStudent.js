@@ -10,10 +10,27 @@ const SignUpStudent = () => {
     const dispatch=useDispatch()
     const navigate=useNavigate()
 
+function submit(e){
+    e.preventDefault()
+    let obj={
+        name:userName,
+        email:email,
+        password:password
+    }
+
+    localStorage.setItem("key",JSON.stringify(obj))
+    navigate("/signinstudent")
+}
+
   return (
+
+
+
+
+
     <div>
          <div>
-      <div class="signup-container">
+      <div class="signup-container" style={{backgroundColor:"black",color:"white"}}>
     <h2>Sign Up</h2>
     <form>
       <div class="form-group">
@@ -35,19 +52,24 @@ const SignUpStudent = () => {
         }}/>
       </div>
       <div class="form-group">
-        <button type="submit" onClick={(e)=>{
-            let obj={
-                userName:userName,
-                email:email,
-                password:password
-            }
-            dispatch(addUser(obj))
-            e.preventDefault()
-            navigate("/signinstudent")
-        }}>Sign Up</button>
+        <button type="submit"
+        onClick={submit}
+        //  onClick={(e)=>{
+        //     let obj={
+        //         userName:userName,
+        //         email:email,
+        //         password:password
+        //     }
+        //     dispatch(addUser(obj))
+        //     e.preventDefault()
+        //     navigate("/signinstudent")
+        // }}
+        >Sign Up</button>
       </div>
     </form>
-    <p>Already have an account? <a href="#">Log In</a></p>
+    <p>Already have an account? <a href="#" onClick={()=>{
+        navigate("/signinstudent")
+    }}>Log In</a></p>
   </div>
     </div>
     </div>
