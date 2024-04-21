@@ -13,10 +13,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 // import Slice from './Slice'
 import slice from './Slice';
+import Slice2 from './Slice2';
 
 const store = configureStore({
     reducer: {
-        users: slice.reducer // Ensure you're using the reducer from Slice
+        users: slice.reducer, // Ensure you're using the reducer from Slice
+        Sid:Slice2
     }
 });
 

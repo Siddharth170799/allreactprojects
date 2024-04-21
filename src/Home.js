@@ -11,15 +11,13 @@ const Home = () => {
     const dispatch=useDispatch()
     console.log(users)
     function delete2(id){
-    
-        dispatch(deleteUser({id:id}))
-
-    }
+    dispatch(deleteUser({id:id}))
+}
   
   return (
     <div className='container'>
         <h2 style={{margin:"100px",textAlign:"center"}}>Crud App with JSON Server</h2>
-      <Link to="/create"><div style={{textAlign:"center"}}> <button className='btn btn-success my-3' >Create +</button></div></Link> 
+      <Link to="/create"><div style={{textAlign:"center",marginBottom:"70px"}}> <button className='btn btn-success my-3' style={{backgroundColor:"green"}} >Create +</button></div></Link> 
         <table style={{marginBottom:"200px"}}>
             <thead>
                 <tr>
@@ -40,7 +38,7 @@ const Home = () => {
                                 <Link to={`/edit/${user.id}`} className='btn btn-sm btn-primary'>Edit</Link>
                                 <button onClick={()=>{
                                     delete2(user.id)
-                                }} className='btn btn-sm btn-danger ms-2'>Delete</button>
+                                }} className='btn btn-sm btn-danger ms-2' style={{backgroundColor:"red",marginLeft:"20px"}}>Delete</button>
                             </td>
                         </tr>
                     )

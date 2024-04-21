@@ -12,7 +12,8 @@ const Create = () => {
 
     const handleSubmit=(event)=>{
         event.preventDefault()
-        dispatch(addUser([{id : users[users.length-1],name,email}]))
+        const data ={id : users.length,name,email}
+        dispatch(addUser(data))
         navigate("/")
     }
   return (
