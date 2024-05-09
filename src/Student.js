@@ -25,25 +25,35 @@ const style = {
 const Student = () => {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const dispatch = useDispatch();
+ 
   const navigate = useNavigate();
   const get = useSelector((state) => state.Sid2.answers);
   const get2 = useSelector((state) => state.Sid.userQuestion);
   console.log(get);
 
-  const [data, setData] = useState(get);
-  const [data2, setData2] = useState(get2);
+ 
 
-  const [data3, setData3] = useState("");///displaying question//
+  const [data3, setData3] = useState([]);///displaying question//
   const [data4, setData4] = useState("");////displaying answer//
-  const [data5,setData5]=useState([])
+ 
 
   function question() {
-    // let obj={
-    //     question:input
-    // }
-    // setData5([...data5,obj])
-    localStorage.setItem("key1",input);
+   
+    let array1=[]
+    let obj={
+        question:input
+    }
+
+
+  const get=  localStorage.getItem("key1")
+const get2=JSON.parse(get)
+if(get2){
+  array1=[...get2,obj]
+}
+else{
+  array1.push(obj)
+}
+    localStorage.setItem("key1",JSON.stringify(array1));
 
     console.log(input);
   }
@@ -53,11 +63,12 @@ const Student = () => {
 
   useEffect(() => {
     const fetch3 = localStorage.getItem("key1");
-    setData3(fetch3);
+    const fetch5=JSON.parse(fetch3)
+    setData3(fetch5);
     const fetch4 = localStorage.getItem("key2");
     setData4(fetch4);
   }, []);
-
+console.log(data3)
   return (
     <>
       <div>
@@ -126,12 +137,14 @@ const Student = () => {
                 Navigate to Teacher
               </button>
               <div>
-                Question.{data3}
-                {/* {data2.map((item,index)=>{
+                Question.
+                {/* {data3} */}
+
+                {data3.map((item,index)=>{
         return(
              <div key={index}>{item.question}</div>
         )
-    })} */}
+    })}  
               </div>
               <div>
                 <h3>

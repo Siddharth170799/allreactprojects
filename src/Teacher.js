@@ -96,7 +96,8 @@ const Teacher = () => {
    }
    useEffect(()=>{
    const fetch1= localStorage.getItem("key1")
-   setState(fetch1)
+   const fetch2=JSON.parse(fetch1)
+   setState(fetch2)
    },[])
   return (
     <>
@@ -122,7 +123,11 @@ const Teacher = () => {
                 })}</div> */}
                 {/* <div>{question}</div> */}
                 {/* <div>{JSON.stringify(question)}</div> */}
-               <div>{state}</div>
+               <div>{state.map((item,index)=>{
+                return(
+                  <div key={index}>{item.question}</div>
+                )
+               })}</div>
                 <div>Answer The Question</div>
               <input type='text' placeholder='Enter' onChange={(e)=>{
                 setInput(e.target.value)

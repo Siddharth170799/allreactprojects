@@ -30,14 +30,27 @@ import SignUps from './newpagesignup';
 import SignInSide2 from './teacherSignIn';
 import SignUps2 from './teacherSignup';
 import MediaCover from './video';
+import Increment from './AutoIncrement/Increment';
+
+import Todolist2 from './ToDoList2';
+
+import ImageSlider from './ImageSlider';
+import BookingList from './Production';
+import MyFormComponent from './Production';
+
+
 // import SignUp from './SignUp';
 
 function App() {
   return (
     <>
+    {/* <BookingList/> */}
+    <MyFormComponent/>
+   {/* <Todolist2/> */}
     {/* <Parent/> */}
     {/* <FirstChild/> */}
     {/* <ToDoList/> */}
+    
     {/* <URl/> */}
     {/* <Model/> */}
     {/* <Child/>
@@ -58,7 +71,7 @@ function App() {
     {/* <Main/> */}
     {/* <Child/> */}
     {/* <SignUp/> */}
-    <BrowserRouter>
+     {/* <BrowserRouter>
     <Routes>
       <Route path="/" element={<SignUp/>}/>
       <Route path="/signupstudent" element={<SignUps/>}/>
@@ -68,11 +81,14 @@ function App() {
       <Route path="/signinteacher" element={<SignInSide2/>}/>
       <Route path="/teacher" element={<Teacher/>}/>
       </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>   */}
+   <ImageSlider url={'https://picsum.photos/v2/list'} limit={'10'}/>
+      {/* <Increment/> */}
       {/* /* <SignInSide/>
       <SignUps/> */}
       {/* <MediaCover/> */}
       {/* <SignUp/> */}
+     
 
     </>
   );
